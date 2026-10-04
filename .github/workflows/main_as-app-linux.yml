@@ -60,6 +60,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'as-app-linux'
-          slot-name: 'Staging'
+          slot-name: 'Production'
           package: .
           
