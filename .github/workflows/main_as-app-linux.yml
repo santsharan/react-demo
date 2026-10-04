@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - as-app-linux
 on:
   push:
     branches:
-      - main
+      - demo-linux
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: build
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,6 +60,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'as-app-linux'
-          slot-name: 'Production'
+          slot-name: 'Staging'
           package: .
           
